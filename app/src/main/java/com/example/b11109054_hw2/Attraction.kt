@@ -4,5 +4,5 @@ data class Attraction(
     val name: String,
     val description: String,
     val address: String,
-    val imageResourceID: Int // 整數類型的圖片資源 ID
+    val imageResourceID: Int
 )
