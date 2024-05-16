@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             B11109054_HW2Theme {
-                // A surface container using the 'background' color from the theme
+
                 HW2()
             }
         }
@@ -67,7 +67,7 @@ fun HW2() {
             }
         } else {
             //DetailPage(attraction = selectedAttraction!!) {
-            selectedAttraction = null // 返回主頁面
+            selectedAttraction = null
         }
     }
 }
@@ -131,7 +131,7 @@ fun AttractionItem(attraction: Attraction, onClick: (Attraction) -> Unit) {
             ) {
                 Text(
                     text = attraction.name,
-                    style = MaterialTheme.typography.h6.copy(fontSize = 20.sp), // 調整字體大小
+                    style = MaterialTheme.typography.h6.copy(fontSize = 20.sp),
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Start,
                     color = Color.White
@@ -142,8 +142,8 @@ fun AttractionItem(attraction: Attraction, onClick: (Attraction) -> Unit) {
             ) {
                 Text(
                     text = attraction.frontpagedes,
-                    style = MaterialTheme.typography.body2.copy(fontSize = 16.sp), // 調整字體大小
-                    modifier = Modifier.padding(16.dp), // 添加内边距以匹配文本的大小
+                    style = MaterialTheme.typography.body2.copy(fontSize = 16.sp),
+                    modifier = Modifier.padding(16.dp),
                     textAlign = TextAlign.Start,
                     color = Color.White
                 )
