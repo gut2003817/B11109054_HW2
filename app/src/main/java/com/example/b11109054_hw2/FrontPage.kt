@@ -42,7 +42,9 @@ fun FrontPage(attractions: List<Attraction>, onAttractionSelected: (Attraction) 
         Column(modifier = Modifier.weight(1f)) {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(attractions) { attraction ->
-                    AttractionItem(attraction = attraction, onClick = onAttractionSelected)
+                    AttractionItem(attraction = attraction) {
+                        onAttractionSelected(attraction)
+                    }
                 }
             }
         }
@@ -50,11 +52,11 @@ fun FrontPage(attractions: List<Attraction>, onAttractionSelected: (Attraction) 
 }
 
 @Composable
-fun AttractionItem(attraction: Attraction, onClick: (Attraction) -> Unit) {
+fun AttractionItem(attraction: Attraction, onClick: () -> Unit) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .clickable { onClick(attraction) }
+            .clickable { onClick() }
             .padding(16.dp)
             .background(MyColors.frontpageAttractionsName, RoundedCornerShape(16.dp))
     ) {

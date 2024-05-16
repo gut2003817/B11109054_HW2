@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.b11109054_hw2.ui.theme.B11109054_HW2Theme
 import androidx.compose.runtime.*
-import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.remember
+import kotlinx.coroutines.selects.select
 
 
 class MainActivity : ComponentActivity() {
@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun HW2() {
     MaterialTheme {
@@ -36,19 +37,20 @@ fun HW2() {
                 selectedAttraction = attraction
             }
         } else {
-            //DetailPage(attraction = selectedAttraction!!) {
-            selectedAttraction = null
+            DetailPage(
+                attraction = selectedAttraction!!,
+                onBackClicked = { selectedAttraction = null },
+                onMapClicked = {}
+            )
         }
     }
 }
-
 
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     B11109054_HW2Theme {
-        val attractionsView = AttractionsView()
-        FrontPage(attractions = attractionsView.attractions) { }
+        HW2()
     }
 }
