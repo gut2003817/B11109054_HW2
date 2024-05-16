@@ -50,7 +50,9 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.compose.foundation:foundation-layout")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.material:material:1.5.1")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
