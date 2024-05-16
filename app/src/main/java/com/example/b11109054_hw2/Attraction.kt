@@ -4,6 +4,8 @@ data class Attraction(
     val name: String,
     val frontpagedes: String,
     val description: String,
-    val address: String,
-    val imageResourceID: Int
+    val imageResourceID: Int,
+    val rating: String? = null,
+    val phoneNumber: String? = null,
+    val address: String
 )
